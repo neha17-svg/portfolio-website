@@ -1,0 +1,29 @@
+.main-content {
+  padding-top: 100px;
+  min-height: 100vh;
+  color: #f0f0f0;
+  text-align: center;
+}
+
+.highlight-text {
+  color: #ffd166;
+  font-weight: bold;
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeInUp 1.8s ease-in-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
