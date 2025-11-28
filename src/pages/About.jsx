@@ -55,7 +55,7 @@ export default function About() {
             <div className="edu-card left">
               <div className="content">
                 <h4>B.E. in Computer Science</h4>
-                <p>3rd Year Student | CGPA 9.1</p>
+                <p>3rd Year Student (present)| CGPA 9.1 (2nd year)</p>
               </div>
             </div>
           </div>
@@ -93,6 +93,13 @@ export default function About() {
               <p>
                 Represented my college in <span className="highlight">Smart India Hackathon</span>{" "}
                 (Internal Round), building impactful solutions with innovative use of technology.
+              </p>
+            </div>
+                      <div className="hack-card">
+              <h4>🧠 Ideathon </h4>
+              <p>
+                Represented my college in <span className="highlight">College State level Ideathons</span>{" "}
+                showcasing innovative ideas and problem-solving skills by partcipating in state level ideathons such as New Horizon college.
               </p>
             </div>
           </div>

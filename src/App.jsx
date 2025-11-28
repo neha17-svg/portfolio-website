@@ -11,15 +11,21 @@ import "./App.css";
 export default function App() {
   return (
     <>
+      
+
       <NavbarComponent />
       <div className="main-content container fade-in">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/skills" element={<Skills />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
+<Routes>
+  <Route index element={<Home />} />   {/* opens first */}
+  <Route path="/" element={<Home />} />
+  <Route path="/about" element={<About />} />
+  <Route path="/projects" element={<Projects />} />
+  <Route path="/skills" element={<Skills />} />
+  <Route path="/contact" element={<Contact />} />
+</Routes>
+
+
+
       </div>
     </>
   );

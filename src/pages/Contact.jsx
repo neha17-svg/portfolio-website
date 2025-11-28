@@ -4,11 +4,13 @@ import "./ContactStyle.css";
 export default function Contact() {
   useEffect(() => {
     const reveals = document.querySelectorAll(".reveal");
-    const onScroll = () => {
+
+    const handleReveal = () => {
       reveals.forEach((el) => {
         const windowHeight = window.innerHeight;
         const elementTop = el.getBoundingClientRect().top;
         const elementVisible = 120;
+
         if (elementTop < windowHeight - elementVisible) {
           el.classList.add("active");
         } else {
@@ -16,8 +18,13 @@ export default function Contact() {
         }
       });
     };
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
+
+    // 👇 Run once when page loads
+    handleReveal();
+
+    // 👇 Run on scroll for animations
+    window.addEventListener("scroll", handleReveal);
+    return () => window.removeEventListener("scroll", handleReveal);
   }, []);
 
   return (
@@ -26,8 +33,8 @@ export default function Contact() {
         <h1 className="contact-title">📬 Let’s Connect</h1>
 
         <p className="contact-intro reveal">
-          I’d love to hear from you! Whether it’s about collaboration, design ideas, or
-          just a friendly chat — feel free to reach out 💌  
+          I’d love to hear from you! Whether it’s about collaboration, design ideas,
+          or just a friendly chat — feel free to reach out 💌  
           Let’s build something creative together!
         </p>
 
@@ -64,6 +71,18 @@ export default function Contact() {
             <h4>Instagram</h4>
             <p>@nehamali_17</p>
           </a>
+
+          {/* GitHub Card */}
+          <a
+            href="https://github.com/neha17-svg"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="contact-card reveal"
+          >
+            <div className="icon">🐙</div>
+            <h4>GitHub</h4>
+            <p>neha17-svg</p>
+          </a>
         </div>
 
         <div className="footer-note reveal">
@@ -74,9 +93,11 @@ export default function Contact() {
           </p>
         </div>
       </div>
-      <div className="floating-bg"></div>
-     <a href="mailto:nehadeepakmali17@gmail.com" className="floating-btn">💬 Message Me</a>
 
+      <div className="floating-bg"></div>
+      <a href="mailto:nehadeepakmali17@gmail.com" className="floating-btn">
+        💬 Message Me
+      </a>
     </section>
   );
 }

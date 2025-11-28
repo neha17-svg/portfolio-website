@@ -90,3 +90,48 @@
 .custom-toggler .navbar-toggler-icon {
   filter: invert(1) brightness(1.5);
 }
+/* Slide Navbar Up */
+.navbar-hide {
+  transform: translateY(-100px);
+  transition: transform 0.5s ease-in-out;
+}
+.navbar-hide {
+  transform: translateY(-120px);
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Navbar Slide Up Animation */
+.navbar-hide {
+  transform: translateY(-120px);
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Prevent content from jumping */
+body {
+  padding-top: 80px;
+}
+
+/* Particles behind content */
+#tsparticles {
+  position: fixed;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+}
+.navbar-collapse.show {
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+}
+/* Smooth navbar hide/show */
+.navbar-hide {
+  transform: translateY(-120px);
+  opacity: 0;
+  transition: transform 0.7s ease-in-out, opacity 0.7s ease-in-out;
+}
+
+.navbar {
+  transition: transform 0.7s ease-in-out, opacity 0.7s ease-in-out;
+}
+

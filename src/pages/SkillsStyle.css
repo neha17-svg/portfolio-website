@@ -21,16 +21,17 @@
   filter: blur(80px);
   animation: floatGlow 8s ease-in-out infinite alternate;
 }
+
 @keyframes floatGlow {
   from { transform: translate(0, 0); opacity: 0.7; }
   to { transform: translate(40px, -40px); opacity: 1; }
 }
 
-/* Title and Intro */
+/* ===== TITLE ===== */
 .skills-title {
   text-align: center;
   font-size: 2.3rem;
-  color: #ffd166;
+  color: #efeade;
   text-shadow: 0 0 20px rgba(255, 209, 102, 0.4);
   font-weight: 700;
   margin-bottom: 0.8rem;
@@ -52,7 +53,7 @@
   font-weight: 600;
 }
 
-/* Skills Grid */
+/* ===== GRID ===== */
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -60,43 +61,66 @@
   z-index: 1;
 }
 
-/* Skill Card */
+/* ===== CARD STYLE ===== */
 .skill-card {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 209, 102, 0.15);
   border-radius: 14px;
   padding: 1.4rem;
-  transition: all 0.35s ease;
+  transition: transform 0.15s ease-out, box-shadow 0.15s ease-out, border-color 0.15s ease-out;
   transform: translateY(30px);
   opacity: 0;
   position: relative;
   box-shadow: 0 0 25px rgba(255, 209, 102, 0.05);
 }
 
+/* Fast & Clean Hover Effect */
 .skill-card:hover {
-  transform: translateY(-6px) scale(1.02);
-  border-color: rgba(255, 209, 102, 0.4);
-  box-shadow: 0 0 40px rgba(255, 209, 102, 0.25);
+  transform: translateY(-6px) scale(1.03);
+  border-color: rgba(255, 215, 0, 1);
+  box-shadow: 0 0 35px rgba(255, 215, 0, 0.6);
 }
 
-/* Skill Header */
+/* ===== ICON ===== */
+.skill-icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.skill-icon {
+  width: 120px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 0 6px gold);
+  transition: 0.2s ease-in-out;
+}
+
+.skill-card:hover .skill-icon {
+  transform: scale(1.08);
+}
+
+/* ===== CARD HEADER ===== */
 .skill-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 0.8rem;
 }
+
 .skill-header h3 {
   font-size: 1rem;
   color: #ffd166;
 }
+
 .percent {
-  color: #fff;
+  color: #eae0c9;
   font-weight: 600;
   font-size: 0.95rem;
 }
 
-/* Progress Bar */
+/* ===== PROGRESS BAR ===== */
 .progress-bar {
   width: 100%;
   height: 8px;
@@ -107,35 +131,68 @@
 }
 
 .progress {
-  height: 100%;
+  height: 8px;
   background: linear-gradient(90deg, #ffd166, #ffb600);
-  border-radius: 10px;
-  animation: slideIn 0.9s ease forwards;
+  border-radius: 20px;
+  width: 0;
+  animation: fillBar 1.2s forwards ease-out;
 }
 
-/* Animations */
+@keyframes fillBar {
+  to { width: var(--w); }
+}
+
+/* ===== REVEAL ANIMATION ===== */
 .reveal {
   opacity: 0;
   transform: translateY(40px);
-  transition: all 0.4s ease-out;
 }
+
 .reveal.active {
   opacity: 1;
   transform: translateY(0);
+  transition: all 0.3s ease-in-out;
 }
 
+/* ===== TITLE ANIMATION ===== */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }
 }
-@keyframes slideIn {
-  from { width: 0; }
-  to { width: var(--width, 100%); }
+
+/* ===== FLOATING BUBBLES ===== */
+.bubble-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
 }
 
-/* Responsive */
+.bubble {
+  position: absolute;
+  bottom: -50px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(255, 215, 0, 0.4);
+  animation: floatUp 8s infinite ease-in;
+  opacity: 0.6;
+}
+
+@keyframes floatUp {
+  from { transform: translateY(0); opacity: 0.6; }
+  to { transform: translateY(-130vh); opacity: 0; }
+}
+
+/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   .skills-title { font-size: 2rem; }
   .skills-intro { font-size: 1rem; }
+  .skill-icon { width: 80px; }
 }
+
+
 
