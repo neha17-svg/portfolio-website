@@ -1,214 +1,351 @@
-
-/* ===== CONTACT PAGE (FAST + ELEGANT ANIMATIONS) ===== */
-.contact-section {
-  min-height: 100vh;
-  padding: 6rem 2rem 4rem;
-  background: linear-gradient(145deg, #0f0f0f, #1a1a1a);
-  color: #fff;
-  font-family: "Poppins", sans-serif;
-  position: relative;
-  overflow: hidden;
-  animation: fadeInSection 0.8s ease-in-out forwards;
+.page {
+  margin-top: 60px;
+  text-align: center;
+  animation: fadeInUp 1.8s ease-in-out;
 }
 
-/* ===== Floating Gradient Glow ===== */
-.floating-bg {
-  position: absolute;
-  width: 250px;
-  height: 250px;
-  background: radial-gradient(circle, rgba(255, 209, 102, 0.25), transparent 70%);
-  border-radius: 50%;
-  animation: floatBg 6s ease-in-out infinite alternate;
-  filter: blur(40px);
-  top: 35%;
-  left: 15%;
-  z-index: 0;
-}
-
-@keyframes floatBg {
-  from { transform: translate(0, 0); opacity: 0.8; }
-  to { transform: translate(60px, -50px); opacity: 1; }
-}
-
-/* ===== Title ===== */
-.contact-title {
-  font-size: 2.5rem;
+.page h1 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
   color: #ffd166;
-  text-align: center;
   font-weight: 700;
-  text-shadow: 0 0 15px rgba(255, 209, 102, 0.5);
-  margin-bottom: 1.5rem;
-  animation: fadeUp 0.7s ease;
 }
 
-/* ===== Intro Paragraph ===== */
-.contact-intro {
-  text-align: center;
-  max-width: 750px;
-  margin: 0 auto 2.5rem;
-  color: #ddd;
-  font-size: 1.1rem;
-  line-height: 1.8;
-  animation: fadeUp 1s ease;
+.page p {
+  color: #dcdcdc;
+  max-width: 700px;
+  margin: 0 auto 1rem;
+  line-height: 1.7;
 }
 
-/* ===== Contact Grid ===== */
-.contact-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.8rem;
-  z-index: 1;
-  position: relative;
-}
-
-/* ===== Contact Card ===== */
-.contact-card {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 209, 102, 0.2);
-  border-radius: 15px;
-  padding: 1.4rem;
-  width: 260px;
-  text-align: center;
-  color: #eee;
-  text-decoration: none;
+/* Buttons */
+.btn-warning {
+  color: #000;
+  font-weight: 600;
+  border: none;
   transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
 }
 
-.contact-card .icon {
-  font-size: 2rem;
-  margin-bottom: 0.6rem;
-  transition: transform 0.3s ease;
+.btn-warning:hover {
+  background-color: #ffcc00;
+  box-shadow: 0 0 25px rgba(255, 209, 102, 0.7);
+  transform: translateY(-2px);
 }
 
-/* ===== Hover Effects ===== */
-.contact-card::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(120deg, transparent, rgba(255, 209, 102, 0.25), transparent);
+.glow {
+  box-shadow: 0 0 20px rgba(255, 209, 102, 0.3);
   transition: all 0.4s ease;
 }
 
-.contact-card:hover::after {
-  left: 100%;
+.glow:hover {
+  box-shadow: 0 0 30px rgba(255, 209, 102, 0.6);
+  transform: scale(1.05);
 }
 
-.contact-card:hover {
-  transform: translateY(-6px) scale(1.03);
-  box-shadow: 0 0 25px rgba(255, 209, 102, 0.25);
-  background: rgba(255, 209, 102, 0.08);
+/* Hover cards */
+.hover-card {
+  border: 1px solid #222;
+  border-radius: 10px;
+  transition: all 0.3s ease;
 }
 
-.contact-card:hover .icon {
-  transform: rotate(10deg) scale(1.1);
+.hover-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 20px rgba(255, 209, 102, 0.2);
 }
 
-/* ===== Footer Note ===== */
-.footer-note {
-  text-align: center;
-  margin-top: 3rem;
-  color: #ccc;
-  font-size: 1rem;
-  letter-spacing: 0.5px;
-  animation: fadeUp 0.9s ease;
-}
-
-.highlight {
-  color: #ffd166;
-  font-weight: 600;
-}
-
-/* ===== Floating “Message Me” Button ===== */
-.floating-btn {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  background: linear-gradient(90deg, #ffd166, #ffae00);
-  color: #000;
-  padding: 12px 22px;
-  border-radius: 50px;
-  font-weight: 600;
-  text-decoration: none;
-  box-shadow: 0 0 25px rgba(255, 209, 102, 0.4);
-  transition: all 0.3s ease-in-out;
-  z-index: 999;
-  font-size: 1rem;
-  animation: pulseButton 2.5s ease-in-out infinite alternate;
-}
-
-.floating-btn:hover {
-  transform: scale(1.08) translateY(-3px);
-  box-shadow: 0 0 40px rgba(255, 209, 102, 0.7);
-  background: linear-gradient(90deg, #ffe38b, #ffd166);
-}
-
-/* ===== Reveal Animations (Faster) ===== */
-.reveal {
+/* Fade animations */
+.fade-in {
   opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.5s ease-out;
+  animation: fadeInUp 1.8s ease-out forwards;
 }
 
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ===== Keyframes ===== */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(25px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeInSection {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes pulseButton {
+@keyframes fadeInUp {
   from {
-    box-shadow: 0 0 15px rgba(255, 209, 102, 0.3);
-    transform: scale(1);
+    opacity: 0;
+    transform: translateY(30px);
   }
   to {
-    box-shadow: 0 0 30px rgba(255, 209, 102, 0.5);
-    transform: scale(1.04);
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* ===== Hero Section ===== */
+.hero-section {
+  margin-top: 100px;
+  text-align: center;
+  border: 1px solid rgba(255, 209, 102, 0.1);
+  border-radius: 15px;
+  padding: 3rem 2rem;
+  background: radial-gradient(circle at center, #1a1a1a 0%, #0e0e0e 100%);
+  box-shadow: 0 0 30px rgba(255, 209, 102, 0.1);
+  transition: box-shadow 0.5s ease;
+  animation: fadeInUp 2s ease-in-out;
+}
+
+.hero-section:hover {
+  box-shadow: 0 0 50px rgba(255, 209, 102, 0.2);
+}
+
+/* ===== Typing Animation ===== */
+.typing-text {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid #ffd166;
+  font-size: 2.2rem;
+  letter-spacing: 1px;
+  animation: typing 3s steps(20, end), blink 0.8s infinite;
+  color: #ffd166;
+  font-weight: 700;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+/* ===== Tagline and Subtext ===== */
+.tagline {
+  font-size: 1.4rem;
+  color: #ffd166;
+  margin-top: 1.2rem;
+  font-weight: 500;
+  animation: fadeIn 2.5s ease-in;
+}
+
+.sub-text {
+  color: #dcdcdc;
+  max-width: 700px;
+  margin: 1rem auto;
+  line-height: 1.6;
+  animation: fadeIn 3s ease-in;
+}
+
+/* ===== Button Glow ===== */
+.glow {
+  box-shadow: 0 0 20px rgba(255, 209, 102, 0.3);
+  transition: all 0.4s ease;
+}
+
+.glow:hover {
+  box-shadow: 0 0 30px rgba(255, 209, 102, 0.6);
+  transform: scale(1.05);
+}
+
+/* ===== Animations ===== */
+.fade-in {
+  opacity: 0;
+  animation: fadeInUp 1.8s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-/* ===== Responsive Design ===== */
-@media (max-width: 768px) {
-  .contact-grid {
-    flex-direction: column;
-    align-items: center;
-  }
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+/* ===== Hero Container (centered section) ===== */
+.hero-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+  perspective: 1000px;
+}
+/* 🌟 Hero Section Gold Effect */
+.hero-section {
+  background: rgba(20, 20, 20, 0.9); /* better contrast */
+  border-radius: 20px;
+  padding: 50px;
+  box-shadow: 0 0 35px rgba(255, 215, 0, 0.3),   /* gold outer glow */
+              inset 0 0 15px rgba(255, 215, 0, 0.4); /* inner soft gold */
+  animation: goldPulse 4s ease-in-out infinite;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 215, 0, 0.4); /* gold outline */
+  transition: all 0.4s ease-in-out;
+}
 
-  .contact-card {
-    width: 90%;
-  }
+/* 🔥 Extra hover glow (3D effect) */
+.hero-section:hover {
+  box-shadow: 0 0 45px rgba(255, 215, 0, 0.6),
+              inset 0 0 20px rgba(255, 215, 0, 0.5);
+  transform: scale(1.015);
+}
 
-  .floating-btn {
-    right: 20px;
-    bottom: 20px;
-    font-size: 0.9rem;
-    padding: 10px 18px;
+/* ✨ Gold pulse slow animation */
+@keyframes goldPulse {
+  0%   { box-shadow: 0 0 25px rgba(255, 215, 0, 0.3); }
+  50%  { box-shadow: 0 0 58px rgba(255, 215, 0, 0.6); }
+  100% { box-shadow: 0 0 25px rgba(255, 215, 0, 0.3); }
+}
+
+/* 💫 Gold highlight text effect */
+.magic-word {
+  background: linear-gradient(90deg, #ffd700, #ffea80, #ffb400);
+  -webkit-background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
+  animation: shimmerGold 2.5s linear infinite;
+}
+
+@keyframes shimmerGold {
+  0%   { text-shadow: 0 0 5px rgba(255, 215, 0, 0.4); }
+  50%  { text-shadow: 0 0 20px rgba(255, 215, 0, 1); }
+  100% { text-shadow: 0 0 5px rgba(255, 215, 0, 0.4); }
+}
+
+
+.hero-section:hover {
+  box-shadow: 0 0 50px rgba(255, 209, 102, 0.25);
+  transform: translateY(-5px) scale(1.02);
+}
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  height: 1px;
+  background: radial-gradient(circle, gold, transparent);
+  filter: blur(8px);
+}
+
+
+
+/* ===== Typing Animation ===== */
+.typing-text {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: px solid #ffd166;
+  font-size: 2.3rem;
+  letter-spacing: 1px;
+  animation: typing 3s steps(20, end), blink 0.8s infinite;
+  color: #ffd166;
+  font-weight: 700;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+/* ===== Tagline and Subtext ===== */
+.tagline {
+  font-size: 1.3rem;
+  color: #ffd166;
+  margin-top: 1.2rem;
+  font-weight: 500;
+  animation: fadeIn 2s ease-in;
+}
+
+.magic-word {
+  color: #fff;
+  text-shadow: 0 0 10px #ffd166;
+  animation: glowPulse 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes glowPulse {
+  from { text-shadow: 0 0 5px #ffd166; }
+  to { text-shadow: 0 0 20px #ffd166; }
+}
+
+.sub-text {
+  color: #dcdcdc;
+  max-width: 700px;
+  margin: 1rem auto;
+  line-height: 1.6;
+  animation: fadeIn 2.8s ease-in;
+  font-size: 1.05rem;
+}
+
+/* ===== Glowing Button ===== */
+.glow {
+  box-shadow: 0 0 20px rgba(255, 209, 102, 0.3);
+  transition: all 0.4s ease;
+}
+
+.glow:hover {
+  box-shadow: 0 0 35px rgba(255, 209, 102, 0.7);
+  transform: scale(1.08);
+}
+
+/* ===== Bottom Tagline ===== */
+.bottom-tagline {
+  margin-top: 3rem;
+  font-size: 1.2rem;
+  color: #ffd166;
+  opacity: 0;
+  animation: fadeInUp 2.5s ease-in-out forwards;
+  animation-delay: 1.5s;
+}
+
+.bottom-tagline strong {
+  font-weight: 700;
+  text-shadow: 0 0 10px rgba(255, 209, 102, 0.6);
+}
+
+/* ===== Animations ===== */
+.fade-in {
+  opacity: 0;
+  animation: fadeInUp 1.8s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
-/* Make reveal elements visible before scrolling */
-.reveal {
-  opacity: 1;
-  transform: translateY(0);
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.bottom-tagline p {
+  animation: float 3s ease-in-out infinite alternate;
+}
+@keyframes float {
+  from { transform: translateY(0); }
+  to { transform: translateY(-5px); }
+}
+samp
+
+
+
+/* 📝 Typewriter Text */
+.typing-skill {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: gold;
+  margin-top: 10px;
 }
 
-/* Animation when active */
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
-  transition: all 0.8s ease-in-out;
-}
+
+
+
+
+
